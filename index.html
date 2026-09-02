@@ -660,6 +660,7 @@
     position: fixed;
     bottom: 0; left: 0; right: 0;
     z-index: 90;
+    overflow: hidden;
     background: linear-gradient(100deg, var(--peach) 0%, #FBBE8B 45%, var(--peach) 100%);
     background-size: 220% 100%;
     animation: btn-sheen 9s ease-in-out infinite;
@@ -669,7 +670,22 @@
     gap: 10px;
     box-shadow: 0 -8px 24px rgba(51,41,26,0.18);
   }
-  .wa-bar a { color: #3A2C16; font-weight: 500; font-size: 0.94rem; display: flex; align-items: center; gap: 10px; letter-spacing: 0.03em; }
+  .wa-bar::after {
+    content: "";
+    position: absolute;
+    top: 0; bottom: 0;
+    left: -60%;
+    width: 42%;
+    background: linear-gradient(100deg, transparent 0%, rgba(255,255,255,0.55) 50%, transparent 100%);
+    transform: skewX(-18deg);
+    animation: wa-shine 4.8s ease-in-out infinite;
+    pointer-events: none;
+  }
+  @keyframes wa-shine {
+    0% { left: -60%; }
+    58%, 100% { left: 128%; }
+  }
+  .wa-bar a { position: relative; z-index: 1; color: #3A2C16; font-weight: 500; font-size: 0.94rem; display: flex; align-items: center; gap: 10px; letter-spacing: 0.03em; }
 
   /* ---------- WHATSAPP FLUTUANTE (desktop) ---------- */
   .wa-float {
@@ -780,7 +796,7 @@
     .services-gallery { grid-template-columns: 1fr; }
     .process-grid { grid-template-columns: 1fr; }
     .process-cta { margin: 32px 0; text-align: center; }
-    .hero { gap: 22px; }
+    .hero { gap: 22px; padding-top: 92px; }
     .hero .hero-cta-row { margin-top: 20px; flex-direction: column; align-items: stretch; gap: 12px; }
     .hero .hero-cta-row .btn { width: 100%; justify-content: center; }
     .hero .tag-row { margin-top: 20px; }
