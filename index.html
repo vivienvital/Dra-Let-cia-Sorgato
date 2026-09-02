@@ -40,8 +40,8 @@
     --gold: #BBA44D;
     --gold-deep: #89703B;
     --sage: #A6D4C4;
-    --sage-deep: #3B7568;
-    --sage-deeper: #285249;
+    --sage-deep: #D8E9DC;
+    --sage-deeper: #C7DCCC;
     --ink: #33291A;
     --ink-soft: #6E5F45;
     --ink-faint: #A2937A;
@@ -334,11 +334,11 @@
   .approach-link svg { width: 16px; height: 16px; transition: transform .2s ease; }
   .approach-link:hover svg { transform: translateY(3px); }
 
-  /* ---------- SERVIÇOS (dark) ---------- */
+  /* ---------- SERVIÇOS ---------- */
   .services {
     position: relative;
-    background: linear-gradient(165deg, var(--sage-deep) 0%, var(--sage-deeper) 100%);
-    color: var(--dark-text);
+    background: linear-gradient(170deg, var(--sage-deep) 0%, var(--sage-deeper) 100%);
+    color: var(--ink);
     overflow: hidden;
   }
   .services::before {
@@ -346,14 +346,14 @@
     position: absolute;
     top: -15%; right: -10%;
     width: 50%; height: 60%;
-    background: radial-gradient(circle, rgba(249,170,111,0.16), transparent 66%);
+    background: radial-gradient(circle, rgba(249,170,111,0.14), transparent 66%);
     pointer-events: none;
   }
   .services .container { position: relative; z-index: 2; }
-  .services .eyebrow { color: var(--peach-soft); }
+  .services .eyebrow { color: var(--gold-deep); }
   .services .eyebrow::before { background: var(--peach); }
-  .services h2 { color: var(--dark-text); font-size: clamp(2rem, 3.4vw, 2.7rem); max-width: 26ch; }
-  .services .lead { margin-top: 16px; color: #CBD4CC; font-size: 1.03rem; max-width: 56ch; }
+  .services h2 { color: var(--ink); font-size: clamp(2rem, 3.4vw, 2.7rem); max-width: 26ch; }
+  .services .lead { margin-top: 16px; color: var(--ink-soft); font-size: 1.03rem; max-width: 56ch; }
   .services-grid {
     margin-top: 52px;
     display: grid;
@@ -361,17 +361,17 @@
     gap: 20px;
   }
   .service-card {
-    background: rgba(255,253,240,0.05);
-    border: 1px solid rgba(247,240,221,0.12);
+    background: var(--cream);
+    border: 1px solid rgba(51,41,26,0.07);
     border-radius: var(--radius-m);
     padding: 28px 24px;
+    box-shadow: var(--shadow-xs);
     transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease, background .25s ease;
   }
   .service-card:hover {
     transform: translateY(-4px);
-    border-color: rgba(249,170,111,0.5);
-    background: rgba(255,253,240,0.08);
-    box-shadow: 0 22px 44px -18px rgba(0,0,0,0.45);
+    border-color: rgba(249,170,111,0.55);
+    box-shadow: var(--shadow-soft);
   }
   .service-icon {
     width: 42px; height: 42px;
@@ -383,15 +383,15 @@
     color: var(--peach);
   }
   .service-icon svg { width: 19px; height: 19px; }
-  .service-card h3 { color: var(--dark-text); font-size: 1.12rem; margin-bottom: 10px; }
-  .service-card p { color: #C3CDC4; font-size: 0.92rem; }
+  .service-card h3 { color: var(--ink); font-size: 1.12rem; margin-bottom: 10px; }
+  .service-card p { color: var(--ink-soft); font-size: 0.92rem; }
 
   .gallery-label {
     margin-top: 64px;
     font-size: 0.74rem;
     letter-spacing: 0.22em;
     text-transform: uppercase;
-    color: #C3CDC4;
+    color: var(--ink-soft);
     font-weight: 500;
   }
   .services-gallery {
@@ -400,7 +400,7 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 18px;
   }
-  .gallery-item { overflow: hidden; border-radius: var(--radius-m); box-shadow: 0 22px 44px -18px rgba(0,0,0,0.5); transition: transform .25s ease; }
+  .gallery-item { overflow: hidden; border-radius: var(--radius-m); box-shadow: var(--shadow-soft); transition: transform .25s ease; }
   .gallery-item:hover { transform: translateY(-4px); }
   .gallery-item .media { aspect-ratio: 4/5; box-shadow: none; border-radius: 0; }
 
@@ -584,10 +584,10 @@
   .faq-answer p { padding: 0 4px 26px; color: var(--ink-soft); font-size: 0.96rem; max-width: 68ch; }
   .faq-cta { text-align: center; margin-top: 44px; }
 
-  /* ---------- CTA FINAL (dark) ---------- */
+  /* ---------- CTA FINAL ---------- */
   .cta-final {
     position: relative;
-    color: var(--dark-text);
+    color: var(--ink);
     text-align: center;
     overflow: hidden;
     background: var(--sage-deeper);
@@ -597,18 +597,18 @@
     width: 100%; height: 100%;
     object-fit: cover;
     z-index: 0;
-    opacity: 0.62;
+    opacity: 0.55;
   }
   .cta-final .cta-overlay {
     position: absolute; inset: 0;
-    background: linear-gradient(165deg, rgba(40,82,73,0.62) 0%, rgba(40,82,73,0.80) 100%);
+    background: linear-gradient(165deg, rgba(216,233,220,0.72) 0%, rgba(199,220,204,0.85) 100%);
     z-index: 1;
   }
   .cta-final .container { position: relative; z-index: 2; max-width: 720px; }
-  .cta-final h2 { color: var(--dark-text); font-size: clamp(2.1rem, 4vw, 3rem); }
-  .cta-final .subhead { margin-top: 18px; color: #CBD4CC; font-size: 1.05rem; }
+  .cta-final h2 { color: var(--ink); font-size: clamp(2.1rem, 4vw, 3rem); }
+  .cta-final .subhead { margin-top: 18px; color: var(--ink-soft); font-size: 1.05rem; }
   .cta-final .hero-cta-row { justify-content: center; margin-top: 34px; }
-  .cta-final .microcopy { margin-top: 22px; font-size: 0.8rem; color: #9FAEA3; letter-spacing: 0.03em; }
+  .cta-final .microcopy { margin-top: 22px; font-size: 0.8rem; color: var(--ink-faint); letter-spacing: 0.03em; }
 
   /* ---------- CONTATO ---------- */
   .contact {
