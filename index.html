@@ -406,6 +406,28 @@
   .gallery-item--mobile { display: none; }
 
   /* ---------- PRIMEIRA CONSULTA ---------- */
+  .process {
+    position: relative;
+    background: var(--butter);
+    overflow: hidden;
+  }
+  .process::before {
+    content: "";
+    position: absolute;
+    inset: -24px;
+    background: url('images/pattern-simbolo.png') center center / cover no-repeat;
+    filter: blur(4px);
+    opacity: 0.34;
+    pointer-events: none;
+  }
+  .process::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(254,239,196,0.35);
+    pointer-events: none;
+  }
+  .process .container { position: relative; z-index: 1; }
   .process-inner {
     display: grid;
     grid-template-columns: 0.85fr 1.15fr;
@@ -439,7 +461,8 @@
     font-size: 0.94rem;
     color: var(--ink-soft);
     padding: 18px 22px;
-    background: var(--butter);
+    background: var(--cream);
+    border: 1px solid rgba(51,41,26,0.06);
     border-radius: var(--radius-m);
     box-shadow: var(--shadow-xs);
     max-width: fit-content;
@@ -479,54 +502,6 @@
   }
   .credential-chip:hover { transform: translateY(-3px); box-shadow: var(--shadow-soft); }
   .credential-chip svg { width: 16px; height: 16px; color: var(--peach-deep); flex-shrink: 0; }
-
-  /* ---------- DIFERENCIAIS ---------- */
-  .differentials {
-    position: relative;
-    background: var(--butter);
-    overflow: hidden;
-  }
-  .differentials::before {
-    content: "";
-    position: absolute;
-    inset: -24px;
-    background: url('images/pattern-simbolo.png') center center / cover no-repeat;
-    filter: blur(4px);
-    opacity: 0.34;
-    pointer-events: none;
-  }
-  .differentials::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(254,239,196,0.35);
-    pointer-events: none;
-  }
-  .differentials .container { position: relative; z-index: 1; }
-  .differentials-head h2 { font-size: clamp(2rem, 3.4vw, 2.7rem); max-width: 22ch; }
-  .diff-grid {
-    margin-top: 46px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-  }
-  .diff-card {
-    background: var(--cream);
-    padding: 26px 22px;
-    border-radius: var(--radius-m);
-    box-shadow: var(--shadow-xs);
-    transition: transform .25s ease, box-shadow .25s ease;
-  }
-  .diff-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-soft); }
-  .diff-card .diff-num {
-    font-family: 'Poiret One', sans-serif;
-    color: var(--gold-deep);
-    font-size: 1.7rem;
-    margin-bottom: 12px;
-    display: block;
-  }
-  .diff-card h3 { font-size: 1.08rem; margin-bottom: 8px; }
-  .diff-card p { font-size: 0.9rem; color: var(--ink-soft); }
 
   /* ---------- DEPOIMENTOS ---------- */
   .testimonials-head h2 { font-size: clamp(2rem, 3.4vw, 2.7rem); max-width: 20ch; }
@@ -774,7 +749,6 @@
   @media (max-width: 980px) {
     .services-grid { grid-template-columns: repeat(2, 1fr); }
     .services-gallery { grid-template-columns: repeat(2, 1fr); }
-    .diff-grid { grid-template-columns: repeat(2, 1fr); }
     .credentials-list { grid-template-columns: 1fr; }
     .hero, .approach, .about, .contact, .symptoms-inner, .process-inner { grid-template-columns: 1fr; }
     .hero-left { display: contents; }
@@ -824,7 +798,6 @@
     .to-top { bottom: 132px; left: 16px; }
     .faq-cta { margin: 32px 0; }
     .faq-cta .btn-ghost { display: flex; width: 100%; justify-content: center; text-align: center; white-space: normal; padding: 16px 22px; }
-    .diff-grid { grid-template-columns: 1fr; }
     .testimonial-grid { grid-template-columns: 1fr; }
     .contact { grid-template-columns: 1fr; }
     .wa-bar { display: flex; }
@@ -994,7 +967,8 @@
 </section>
 
 <!-- ============ PRIMEIRA CONSULTA ============ -->
-<section class="container" id="primeira-consulta">
+<section class="process" id="primeira-consulta">
+  <div class="container">
   <div class="process-inner">
     <div class="process-photo reveal">
       <img class="media" src="images/sala-exame-2.jpeg" alt="Sala de exame em tom amarelo suave, com prateleiras redondas e mural de desenho para as crianças" loading="lazy">
@@ -1035,6 +1009,7 @@
       </div>
     </div>
   </div>
+  </div>
 </section>
 
 <!-- ============ SOBRE ============ -->
@@ -1054,24 +1029,6 @@
         <div class="credential-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19.5V5a2 2 0 012-2h12a2 2 0 012 2v14.5M4 19.5A2.5 2.5 0 016.5 22H18a2 2 0 002-2M4 19.5A2.5 2.5 0 016.5 17H20"/></svg>Graduação · UNOESTE, Presidente Prudente</div>
         <div class="credential-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>CRM/SC 35369 · RQE 24175 · RQE 24281</div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ DIFERENCIAIS ============ -->
-<section class="differentials">
-  <div class="container">
-    <div class="differentials-head reveal">
-      <span class="eyebrow">Diferenciais</span>
-      <h2>Por que as famílias escolhem esse acompanhamento.</h2>
-    </div>
-    <div class="diff-grid">
-      <div class="diff-card reveal"><span class="diff-num">01</span><h3>Foco exclusivo em pediatria</h3><p>Atenção integral à criança e ao adolescente, do lactente à adolescência.</p></div>
-      <div class="diff-card reveal reveal-delay-1"><span class="diff-num">02</span><h3>Formação em gastropediatria</h3><p>Poucos pediatras têm esse aprofundamento em saúde digestiva.</p></div>
-      <div class="diff-card reveal reveal-delay-2"><span class="diff-num">03</span><h3>Explicação clara para os pais</h3><p>Você entende o diagnóstico, a conduta e o motivo de cada passo.</p></div>
-      <div class="diff-card reveal"><span class="diff-num">04</span><h3>Disponibilidade para dúvidas</h3><p>Orientação também entre as consultas, quando faz sentido.</p></div>
-      <div class="diff-card reveal reveal-delay-1"><span class="diff-num">05</span><h3>Consulta sem pressa</h3><p>Tempo real para investigar a causa, não só constatar o sintoma.</p></div>
-      <div class="diff-card reveal reveal-delay-2"><span class="diff-num">06</span><h3>Ambiente preparado para crianças</h3><p>Consultório acolhedor, pensado para deixar a criança confortável.</p></div>
     </div>
   </div>
 </section>
