@@ -793,7 +793,24 @@
     .menu-toggle { display: block; }
     .symptom-grid { grid-template-columns: 1fr; }
     .services-grid { grid-template-columns: 1fr; }
-    .services-gallery { grid-template-columns: 1fr; }
+    .services-gallery {
+      display: flex;
+      grid-template-columns: none;
+      gap: 14px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      margin: 22px calc(-1 * clamp(20px, 5vw, 48px)) 0;
+      padding: 4px clamp(20px, 5vw, 48px) 10px;
+    }
+    .services-gallery::-webkit-scrollbar { display: none; }
+    .services-gallery .gallery-item {
+      flex: 0 0 80%;
+      scroll-snap-align: center;
+      opacity: 1;
+      transform: none;
+    }
     .process-grid { grid-template-columns: 1fr; }
     .process-cta { margin: 32px 0; text-align: center; }
     .hero { gap: 22px; padding-top: 92px; }
