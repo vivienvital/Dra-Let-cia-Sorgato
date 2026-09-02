@@ -403,6 +403,7 @@
   .gallery-item { overflow: hidden; border-radius: var(--radius-m); box-shadow: var(--shadow-soft); transition: transform .25s ease; }
   .gallery-item:hover { transform: translateY(-4px); }
   .gallery-item .media { aspect-ratio: 4/5; box-shadow: none; border-radius: 0; }
+  .gallery-item--mobile { display: none; }
 
   /* ---------- PRIMEIRA CONSULTA ---------- */
   .process-inner {
@@ -811,6 +812,8 @@
       opacity: 1;
       transform: none;
     }
+    .services-gallery .gallery-item--mobile { display: block; }
+    .process-photo { display: none; }
     .process-grid { grid-template-columns: 1fr; }
     .process-cta { margin: 32px 0; text-align: center; }
     .hero { gap: 22px; padding-top: 92px; }
@@ -985,6 +988,7 @@
       <div class="gallery-item reveal"><img class="media" src="images/brincoteca.jpeg" alt="Espaço lúdico do consultório, com arcos iluminados, mesa infantil e brinquedos" loading="lazy"></div>
       <div class="gallery-item reveal reveal-delay-1"><img class="media" src="images/sala-exame.jpeg" alt="Sala de exame com trocador, balança pediátrica e parede em tons pastel" loading="lazy"></div>
       <div class="gallery-item reveal reveal-delay-2"><img class="media" src="images/crianca-sofa.jpeg" alt="Sala de espera do consultório, com poltronas terracota e a frase A criança é o amor feito visível na parede" loading="lazy"></div>
+      <div class="gallery-item gallery-item--mobile reveal reveal-delay-3"><img class="media" src="images/sala-exame-2.jpeg" alt="Sala de exame em tom amarelo suave, com prateleiras redondas e mural de desenho para as crianças" loading="lazy"></div>
     </div>
   </div>
 </section>
