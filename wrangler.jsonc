@@ -6,7 +6,7 @@
   "main": "worker.js",
   // Copia só os arquivos do site pra dist/ (evita subir .git e configs)
   "build": {
-    "command": "rm -rf dist && mkdir dist && cp -R index.html images dist/ && find dist -name .DS_Store -delete"
+    "command": "rm -rf dist && mkdir dist && cp -R index.html images robots.txt sitemap.xml dist/ && find dist -name .DS_Store -delete"
   },
   "assets": {
     "directory": "./dist",

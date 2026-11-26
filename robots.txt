@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://draleticiasorgato.com.br/sitemap.xml
